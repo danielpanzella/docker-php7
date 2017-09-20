@@ -14,5 +14,8 @@ RUN apk --no-cache add \
     rm /var/www/localhost/htdocs/*
 
 RUN mkdir /run/apache2
+COPY httpd-foreground /usr/local/bin/
 
-CMD ["http-foreground"]
+EXPOSE 80
+
+CMD ["httpd-foreground"]
